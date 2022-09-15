@@ -6,7 +6,7 @@ import confData from "@/data/conf.json";
 const store = useBindStore();
 console.log("store==>", store);
 
-const options = ref();
+const options = ref([]);
 const currentDo = ref(true);
 const isdisabled = ref(false);
 
@@ -31,7 +31,7 @@ const callAA = () => {
     <div class="flex flex-col items-center">
       <div class="btn-group">
         <!--完成 call 之後-->
-        <template v-if="isdisabled.value">
+        <template v-if="isdisabled">
           <div class="btn btndisabled">Call {{ store.selected }}</div>
           <router-link to="/bind-form" class="btn">Bind</router-link>
         </template>
